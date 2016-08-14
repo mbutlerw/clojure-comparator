@@ -1,11 +1,6 @@
 (ns clojure-comparator.core
+  (require [clojure.string :as str])
   (:gen-class))
-
-(require '[clojure.string :as str])
-
-(defn -main
-  [args]
-  (collect-companies))
 
 (defn string-trimmer [string]
     (str/replace
@@ -24,6 +19,9 @@
   (map str/lower-case
     (str/split
       (slurp "doc/hiring_partners.txt") #"\n")))
+(defn in-both []
+  (filter (fn [x]
+    (some #{x} (collect-hiring-partners))) (collect-companies)))
 
-(filter (fn [x]
-  (= x "8th light")) (collect-companies))
+(defn -main []
+  (print (in-both)))

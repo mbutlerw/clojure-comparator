@@ -1,36 +1,25 @@
-# clojure-comparator
+# Clojure Company Comparator
 
-FIXME: description
+Just a little closure app I wrote to compare the list of companies on the clojure website with makers hiring partners.
+
+I enjoyed the novelty of using clojure to find companies that used clojure.
 
 ## Installation
 
-Download from http://example.com/FIXME.
+Clone this repo, will need to include your own list in docs/hiring_partners.txt
+
+Example format:
+
+```
+Google
+Facebook
+Twitter
+SpaceX
+```
+
 
 ## Usage
 
-FIXME: explanation
-
-    $ java -jar clojure-comparator-0.1.0-standalone.jar [args]
-
-## Options
-
-FIXME: listing of options this app accepts.
-
-## Examples
-
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
-
-## License
-
-Copyright © 2016 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+```lein run
+=> list_of_companies
+```
