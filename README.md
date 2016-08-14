@@ -20,6 +20,7 @@ SpaceX
 
 ## Usage
 
-```lein run
+```
+lein run
 => list_of_companies
 ```
