@@ -12,7 +12,7 @@
       (str/replace string "</a></p>" "") ">" ""))
 
 (defn collect-companies []
-  (str/lower-case
+  (map str/lower-case
     (into []
       (map string-trimmer
         (re-seq  #">[\w| |.]+</a></p>"
@@ -21,10 +21,9 @@
               (slurp "http://clojure.org/community/companies") #"ulist") 1))))))
 
 (defn collect-hiring-partners []
-  (str/lower-case
+  (map str/lower-case
     (str/split
       (slurp "doc/hiring_partners.txt") #"\n")))
 
-(filter #(= (count %) 1)
-(collect-companies)
-(collect-hiring-partners)
+(filter (fn [x]
+  (= x "8th light")) (collect-companies))
